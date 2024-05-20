@@ -134,7 +134,7 @@ class GameSerializerShort(GameSerializer):
 
 class TournamentRoundSerializer(serializers.ModelSerializer):
     #tournament = TournamentSerializerShort()
-    games = GameSerializerShort(many=True)
+    games = GameSerializerShort(many=True,read_only=True)
     class Meta:
         model = TournamentRound
         fields = ['id', 'tournament', 'round_number', 'games']
