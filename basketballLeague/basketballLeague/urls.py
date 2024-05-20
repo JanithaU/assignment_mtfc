@@ -23,3 +23,7 @@ urlpatterns = [
     path('api/sttournaments/', include('Tournament.urls'))
 ]
 
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls'))
+]

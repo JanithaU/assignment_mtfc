@@ -69,7 +69,7 @@ python manage.py runserver
 
 
 
-Navigate to http://127.0.0.1:8000/
+Navigate to http://127.0.0.1:8000/ test
 
 
 ### Login Credentials 
@@ -82,41 +82,41 @@ Navigate to http://127.0.0.1:8000/
 
 for API authenticatoin -> {baseURL}/api-auth/
  
- 1. User (CRUD) (C: role = 'admin') 'can see online users'
+ 1. User (CRUD) (C: role = 'admin') `can see online users`
     - {baseURL}/api/stteams/users
-    - {baseURL}/api/stteams/users/<int:pk>
+    - {baseURL}/api/stteams/users/ <int:pk> /
 
  2. Teams (CRUD) (C: role = 'admin' , 'coach')
     - {baseURL}/api/stteams/teams
-    - {baseURL}/api/stteams/teams/<int:pk>/
-    - {baseURL}/api/stteams/teams/<int:pk>/top_players/
+    - {baseURL}/api/stteams/teams/ <int:pk> /
+    - {baseURL}/api/stteams/teams/ <int:pk> /top_players/
 
  3. Players (CRUD)  (C: role = 'admin', 'coach' )   
     - {baseURL}/api/stteams/players/
-    - {baseURL}/api/stteams/players/<int:pk>/
+    - {baseURL}/api/stteams/players/ <int:pk> /
 
  4. Login Activities  (View only -> admin / user)
     -  {baseURL}/api/stteams/loginactivity/
-    -  {baseURL}/api/stteams/loginactivity/<int:pk>/
+    -  {baseURL}/api/stteams/loginactivity/ <int:pk> /
 
 
  5. Tournaments (CRUD) (C: admin only)
     -  {baseURL}/api/sttournaments/tournaments/
-    -  {baseURL}/api/sttournaments/tournaments/<int:pk>/
+    -  {baseURL}/api/sttournaments/tournaments/ <int:pk> /
 
  6. Tournaments Rounds (CRUD) (C: admin only)  
     - > Only create the 1st round(with sample data its automatically created), based on the round teams score, other rounds are automatically generated. This API contains details for the dashboad.
 
         -  {basedURL}/api/sttournaments/tournamentrounds/
-        -  {basedURL}/api/sttournaments/tournamentrounds/<int:pk>/
+        -  {basedURL}/api/sttournaments/tournamentrounds/ <int:pk> /
 
  7. Games (CRUD) (C: admin only)
-    -  {baseURL}/api/sttournaments/ games
-    -  {baseURL}/api/sttournaments/ games/<int:pk>/
-
- 8. Scores (CURD) (C: admin only)  'Update the relavant scores to see the winners, Tournament Rounds and Tournament Champion'
-    -  {baseURL}/api/sttournaments/ scores<drf_format_suffix:format>
-    -  {baseURL}/api/sttournaments/ scores/<int:pk>/
+    -  {baseURL}/api/sttournaments/games
+    -  {baseURL}/api/sttournaments/games/ <int:pk> /
+    
+ 8. Scores (CURD) (C: admin only)  `Update the relavant scores to see the winners, Tournament Rounds and Tournament Champion`
+    -  {baseURL}/api/sttournaments/scores
+    -  {baseURL}/api/sttournaments/scores/ <int:pk> /
 
 
 
