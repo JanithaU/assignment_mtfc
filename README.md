@@ -101,11 +101,12 @@ for API authenticatoin -> {baseURL}/api-auth/
 
 
  5. Tournaments (CRUD) (C: admin only)
+     - > once the Tournament is completed(all tournament rounds), you can see the Champian here
     -  {baseURL}/api/sttournaments/tournaments/
     -  {baseURL}/api/sttournaments/tournaments/ <int:pk> /
 
  6. Tournaments Rounds (CRUD) (C: admin only)  
-    - > Only create the 1st round(with sample data its automatically created), based on the round teams score, other rounds are automatically generated. This API contains details for the dashboad.
+    - > Only create the 1st round(with sample data its automatically created), based on the round teams score(Update Relavant Scores), other rounds are automatically generated. This API contains details for the dashboad.
 
         -  {basedURL}/api/sttournaments/tournamentrounds/
         -  {basedURL}/api/sttournaments/tournamentrounds/ <int:pk> /
@@ -114,7 +115,7 @@ for API authenticatoin -> {baseURL}/api-auth/
     -  {baseURL}/api/sttournaments/games
     -  {baseURL}/api/sttournaments/games/ <int:pk> /
 
- 8. Scores (CURD) (C: admin only)  `Update the relavant scores to see the winners, Tournament Rounds and Tournament Champion`
+ 8. Scores (CURD) (C: admin only)  `Update the relavant scores to see the winners, Tournament Rounds and Tournament Champion - Automatically Updated`
     -  {baseURL}/api/sttournaments/scores
     -  {baseURL}/api/sttournaments/scores/ <int:pk> /
 

@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from django.conf import settings
 from django.utils import timezone
 from django.db.models import Sum, Count, F
+from rest_framework import serializers
 
 
 
@@ -58,7 +59,9 @@ class Team(models.Model):
 
     def clean(self):
         if self.coach and self.coach.role != 'coach':
-            raise ValidationError(f"The user {self.coach} does not have the role of 'coach'.")
+            raise serializers.ValidationError({"coach": f"The user {self.coach} does not have the role of 'coach'."})
+
+        
         
 
     def save(self, *args, **kwargs):
@@ -106,7 +109,7 @@ class Player(models.Model):
 
     def clean(self):
         if self.team and self.team.players.count() > 10:
-            raise ValidationError("A team cannot have more than 10 players.")
+            raise serializers.ValidationError({"team": "A team cannot have more than 10 players."})
             
         
 

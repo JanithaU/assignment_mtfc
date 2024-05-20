@@ -88,15 +88,18 @@ class Command(BaseCommand):
 
             # Create games for each round
             for j in range(1, 9):
-                team1 = teams[(i + j) % 12]
-                team2 = teams[(i + j + 9) % 12]
+                # team1 = teams[(i + j) % 12]
+                # team2 = teams[(i + j + 9) % 12]
+                team1 = teams[j]
+                team2 = teams[-j]
                 date = timezone.now() + timezone.timedelta(days=i+j)
                 game = Game.objects.create(round=tournament_round, team1=team1, team2=team2, date=date)
                 self.stdout.write(self.style.SUCCESS(f'Successfully added game for {round_number}'))
 
                 # Create scores for each game
-                Score.objects.create(game=game, score1=10, score2=8)
-                game.determine_winner()
+                if j !=8:
+                    Score.objects.create(game=game, score1=10, score2=8)
+                    game.determine_winner()
                 self.stdout.write(self.style.SUCCESS(f'Successfully added score for game {game}'))
 
 

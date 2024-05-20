@@ -15,7 +15,9 @@ class Tournament(models.Model):
         next_round_number = current_round.round_number + 1
         print(current_round.round_number)
         print(current_round.games.count())
-        if current_round.round_number < 4 and current_round.games.count() >= 1 :
+
+        if not any(game.winner is None for game in current_round.games.all()):
+            # if current_round.round_number < 4 and current_round.games.count() >= 1 :
             winning_teams = [game.winner for game in current_round.games.all() if game.winner]
             if  current_round.games.count() == 1: 
                 if len(winning_teams) == 1:
@@ -27,7 +29,8 @@ class Tournament(models.Model):
                 print(winning_teams)
                 for i in range(0, len(winning_teams), 2):
                     Game.objects.create(round=next_round, team1=winning_teams[i], team2=winning_teams[i+1])
-
+        else:
+            pass
 
 
     def __str__(self):
