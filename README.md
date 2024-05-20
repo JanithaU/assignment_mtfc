@@ -29,7 +29,7 @@ python manage.py migrate
 ```
 
 
-`Create a superuser(OPTIONAL):`
+Create a superuser `(OPTIONAL)`:
 ```
 python manage.py createsuperuser
 ```
