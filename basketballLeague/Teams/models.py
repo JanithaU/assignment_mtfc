@@ -105,8 +105,9 @@ class Player(models.Model):
     
 
     def clean(self):
-        if self.team and self.team.players.count() >= 10:
+        if self.team and self.team.players.count() > 10:
             raise ValidationError("A team cannot have more than 10 players.")
+            
         
 
     def save(self, *args, **kwargs):

@@ -38,7 +38,7 @@ class Command(BaseCommand):
         teams = []
         for i in range(1, 18):
             team_name = f'Team{i}'
-            coach = coaches[i-1] if i <= 10 else None
+            coach = coaches[i-1] 
             team = Team.objects.create(name=team_name, coach=coach)
             teams.append(team)
             self.stdout.write(self.style.SUCCESS(f'Successfully added {team_name}'))
@@ -89,7 +89,7 @@ class Command(BaseCommand):
             # Create games for each round
             for j in range(1, 9):
                 team1 = teams[(i + j) % 12]
-                team2 = teams[(i + j + 5) % 12]
+                team2 = teams[(i + j + 9) % 12]
                 date = timezone.now() + timezone.timedelta(days=i+j)
                 game = Game.objects.create(round=tournament_round, team1=team1, team2=team2, date=date)
                 self.stdout.write(self.style.SUCCESS(f'Successfully added game for {round_number}'))
