@@ -3,7 +3,7 @@
 As mentioned in the assignment this project managing the basketball league, including teams, players, coaches, tournaments, and games The project also includes functionality for user authentication and permissions.
 
 ## Installation 
- python version -> Python 3.12.3
+ python version -> Python 3.12.3 
 
 
 Clone the repository:
@@ -113,7 +113,7 @@ for API authenticatoin -> {baseURL}/api-auth/
  7. Games (CRUD) (C: admin only)
     -  {baseURL}/api/sttournaments/games
     -  {baseURL}/api/sttournaments/games/ <int:pk> /
-    
+
  8. Scores (CURD) (C: admin only)  `Update the relavant scores to see the winners, Tournament Rounds and Tournament Champion`
     -  {baseURL}/api/sttournaments/scores
     -  {baseURL}/api/sttournaments/scores/ <int:pk> /
