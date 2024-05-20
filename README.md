@@ -41,15 +41,15 @@ python manage.py test
 ```
 
 ## Sample Data
- > 20 system users - admin(1), player(2), coach(18)
- > 17 Teams
- > 121 Players
+> 20 system users - admin(1), player(2), coach(18)
+> 17 Teams
+> 121 Players
 
- > 1 tournament 
- > 1 tournament Round
- > 8 Games 
- > 8 scores
- 
+> 1 tournament 
+> 1 tournament Round
+> 8 Games 
+> 8 scores
+
 
 ```
 python manage.py add_sample_data
