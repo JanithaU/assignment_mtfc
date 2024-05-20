@@ -9,7 +9,7 @@ As mentioned in the assignment this project managing the basketball league, incl
 Clone the repository:
 ```
 git clone <repository_url>
-cd basketball_league
+cd assignment_mtfc
 ```
 
 Create a virtual environment:
